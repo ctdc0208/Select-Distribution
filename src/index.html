@@ -15,8 +15,8 @@
         <div class="font-bold text-base md:text-xl">
             Select Distribution
         </div>
-        <div class="flex flex-col md:flex-row mt-5">
-            <div class="flex flex-col w-72 md:w-80 lg:w-96 px-4 py-6 mb-14 md:mb-0 md:p-6 mr-3 border-2 border-solid rounded-xl hover:border-red hover:shadow-2xl hover:shadow-gray-400 hover:opacity-100">
+        <div class="flex flex-col md:flex-row mt-5" id="myDIV">
+            <div class="btn cursor-pointer flex flex-col w-72 md:w-80 lg:w-96 px-4 py-6 mb-14 md:mb-0 md:p-6 mr-3 border-solid border-2 border-gray rounded-xl hover:border-red hover:shadow-solid hover:border-t-2 hover:border-l hover:border-r">
                 <img src="../assets/plane.svg" alt="plane" class="h-12 w-12 md:h-14 md:w-14" />
                 <div class="text-2xl lg:text-3xl text-red pt-6">Basic</div>
                 <div class="flex flex-row items-center pt-3">
@@ -43,7 +43,7 @@
                     </div>
                 </div>
             </div>
-            <div class="flex flex-col w-72 md:w-80 lg:w-96 px-4 py-6 mb-6 md:mb-0  md:p-6 md:ml-3 border-2 border-solid rounded-xl hover:border-red">
+            <div class=" btn cursor-pointer flex flex-col w-72 md:w-80 lg:w-96 px-4 py-6 mb-6 md:mb-0  md:p-6 md:ml-3 border-solid border-2 border-gray rounded-xl hover:border-red hover:shadow-solid hover:border-t-2 hover:border-l hover:border-r">
                 <img src="../assets/rocket.svg" alt="rocket" class="h-14 w-14" />
                 <div class="text-2xl lg:text-3xl text-red pt-6">US National</div>
                 <div class="flex flex-row items-center pt-3">
@@ -83,6 +83,20 @@
                 </div>
             </div>
         </div>
+
+        <script>
+            // Add active class to the current button (highlight it)
+            var header = document.getElementById("myDIV");
+            var btns = header.getElementsByClassName("btn");
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].addEventListener("click", function() {
+                    var current = document.getElementsByClassName("active");
+                    current[0].className = current[0].className.replace(" active", "");
+                    this.className += " active";
+                });
+            }
+        </script>
+
 </body>
 
 </html>
